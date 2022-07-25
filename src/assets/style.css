@@ -1,13 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600&display=swap");
 .main_heading {
   font-weight: 600;
   font-size: 35rem;
-  line-height: 43;
+  line-height: 43rem;
   color: #FFFFFF; }
 
 .to_do_item {
   font-weight: normal;
   font-size: 16rem;
-  line-height: 19;
+  line-height: 19rem;
   color: #FFFFFF; }
   .to_do_item.done {
     text-decoration: line-through; }
@@ -15,25 +16,25 @@
 .main_button {
   font-weight: 600;
   font-size: 16rem;
-  line-height: 19;
+  line-height: 19rem;
   color: #FFFFFF; }
 
 .title {
   font-weight: normal;
   font-size: 14rem;
-  line-height: 18;
+  line-height: 18rem;
   color: #FFFFFF; }
 
 .subtitle {
   font-weight: normal;
   font-size: 12rem;
-  line-height: 15;
+  line-height: 15rem;
   color: #FFFFFFB3; }
 
 .hint_text {
   font-weight: normal;
   font-size: 12rem;
-  line-height: 15; }
+  line-height: 15rem; }
 
 html {
   /* 62.5% of 16px browser font size is 10px

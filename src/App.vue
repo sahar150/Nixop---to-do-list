@@ -1,13 +1,23 @@
 <script setup>
+import { ref } from 'vue'
+
+//import components
+import Header from './components/Header.vue';
 
 const availabelThemes = ['violet', 'cabsav'];
-const currentTheme = availabelThemes[0];
+const currentTheme = ref(availabelThemes[0]);
+
+//toggle them function
+function toggleTheme() {
+    //TODO: refactore  to handle more than two themes
+    currentTheme.value = currentTheme.value === availabelThemes[0] ? availabelThemes[1] : availabelThemes[0]
+}
 
 </script>
 
 <template>
     <main class="main_container" :class="currentTheme + '_theme'">
-    {{ currentTheme }}
+        <Header :currentTheme="currentTheme" @toggleTheme="toggleTheme"></Header>
     </main>
 </template>
 
@@ -21,6 +31,7 @@ const currentTheme = availabelThemes[0];
         max-width: 456px;
         min-height: 70vh;
         border-radius: $container_border_radius;
+        padding: 28rem;
 
         //outer container gradiant background without adding extra unnecessary html tag
         &::before {
