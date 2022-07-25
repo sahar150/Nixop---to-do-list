@@ -1,0 +1,18 @@
+/*
+** name: outer_container_bg mixin
+** description: customize outer container garadiant colors
+** params:gradiant start color, gradiant end color
+*/
+@mixin outer_container_bg($grad_from, $grad_to) {
+    background: transparent linear-gradient(180deg, $grad_from 0%, $grad_to 100%) 0% 0% no-repeat padding-box;
+}
+
+/*
+** name: inner_container_style mixin
+** description: customize inner container garadiant background and boxshadow
+** params:gradiant start color, gradiant end color, boxshadow color
+*/
+@mixin inner_container_style($grad_from, $grad_to, $shadow_color) {
+    background: transparent linear-gradient(141deg, $grad_from 0%, $grad_to 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 8px 14px 20px $shadow_color;
+}
