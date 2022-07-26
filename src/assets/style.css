@@ -59,7 +59,8 @@
 .hint_text {
   font-weight: normal;
   font-size: 12rem;
-  line-height: 15rem; }
+  line-height: 15rem;
+  color: #FFFFFFB3; }
 
 html {
   /* 62.5% of 16px browser font size is 10px

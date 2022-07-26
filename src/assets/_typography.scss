@@ -1,0 +1,47 @@
+//typography classes
+.main_heading {
+    font-weight: 600;
+    font-size: 35rem;
+    line-height: 43rem;
+    color: $primary_text_color
+}
+
+.subtitle {
+    font-weight: normal;
+    font-size: 12rem;
+    line-height: 15rem;
+    color: $secondary_text_color;
+}
+
+.title {
+    font-weight: normal;
+    font-size: 14rem;
+    line-height: 18rem;
+    color: $primary_text_color;
+}
+
+.to_do_item {
+    font-weight: normal;
+    font-size: 16rem;
+    line-height: 19rem;
+    color: $primary_text_color;
+
+    &.done {
+        text-decoration: line-through;
+    }
+}
+
+.main_button {
+    font-weight: 600;
+    font-size: 16rem;
+    line-height: 19rem;
+    color: $primary_text_color;
+}
+
+
+.hint_text {
+    font-weight: normal;
+    font-size: 12rem;
+    line-height: 15rem;
+    color: $secondary_text_color;
+}
