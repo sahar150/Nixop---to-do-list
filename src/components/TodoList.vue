@@ -1,13 +1,20 @@
 <script setup>
-import { reactive, watchEffect } from 'vue'
+import { reactive, watchEffect, computed } from 'vue'
 import TodoItem from './TodoItem.vue';
 import AddTaskForm from './AddTaskForm.vue';
-
 const local_data_key = 'localTodoList';
 const todoList = reactive([]);
 
+
 //get data from local storage if exists
 todoList.value = JSON.parse(localStorage.getItem(local_data_key)) ?? []
+
+
+//computed
+const completed = computed(() =>
+    //convert boolaen to number to count true values
+    todoList.value.reduce((count, task) => count + task.done, 0)
+)
 
 
 
@@ -55,7 +62,11 @@ watchEffect(() => {
 
 <template>
     <section class="todo_list_conatiner">
-        <h3 class="title">0/3 done</h3>
+
+        <h3 v-if="todoList.value.length" class="title"> {{ completed }}/{{ todoList.value.length}} done</h3>
+
+        <h3 v-else class="title">Relax, you don't have any tasks!</h3>
+
         <!-- todo items -->
         <transition-group tag="ul" name="list">
             <TodoItem v-for="item in todoList.value" :taskDetails="item" :key="item.id"
@@ -71,6 +82,10 @@ watchEffect(() => {
 
 <style scoped lang="scss">
 .todo_list_conatiner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding-block: 42rem;
 
     .title {
