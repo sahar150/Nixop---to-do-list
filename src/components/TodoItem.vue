@@ -14,7 +14,7 @@ const props = defineProps({
 <template>
     <li class="task_container">
         <label :for="'task' + props.taskDetails.id" class="to_do_item" :class="{ done: props.taskDetails.done }">
-            <input type="checkbox" :id="'task' + props.taskDetails.id" v-model="props.taskDetails.done" />
+            <input type="checkbox" :id="'task' + props.taskDetails.id" v-model="props.taskDetails.done" @change="$emit('stateChanged')"/>
             <span class="task_title">{{ props.taskDetails.title}}</span>
         </label>
 
@@ -40,6 +40,7 @@ const props = defineProps({
         width: calc(100% - 38px); // 38px = delete button width + gap
         padding: 19rem;
         border-radius: $element_border_radius;
+        cursor: pointer;
         //same color for both themes
         background-color: rgba($selago, 0.14);
 
@@ -50,30 +51,35 @@ const props = defineProps({
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
         }
-    }
 
-    //custom checkbox style
-    input[type="checkbox"] {
-        -webkit-appearance: none;
-        appearance: none;
-        position: relative;
-        width: 18.5rem;
-        height: 18.5rem;
-        margin-inline-end: 18.5rem;
+        //custom checkbox style
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            position: relative;
+            width: 18.5rem;
+            height: 18.5rem;
+            margin-inline-end: 18.5rem;
 
-        &::after {
-            content: url('../assets/images/checkbox.svg');
-            position: absolute;
-            top: 0;
-            left: 0;
+            &::after {
+                content: url('../assets/images/checkbox.svg');
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &.done {
+            input[type="checkbox"]::after {
+                content: url('../assets/images/checkbox_done.svg');
+            }
         }
     }
 
-    .done {
-        input[type="checkbox"]::after {
-            content: url('../assets/images/checkbox_done.svg');
-        }
+    .icon_btn {
+        cursor: pointer;
     }
+
 }
 
 </style>
