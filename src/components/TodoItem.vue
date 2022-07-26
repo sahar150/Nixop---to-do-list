@@ -18,7 +18,7 @@ const props = defineProps({
             <span class="task_title">{{ props.taskDetails.title}}</span>
         </label>
 
-        <button class="icon_btn" type="button" aria-label="delete task">
+        <button class="icon_btn" type="button" aria-label="delete task" @click="$emit('deleteTask')">
             <!-- TODO: use svg object instead image -->
             <img src="../assets/images/delete.svg" alt="">
         </button>

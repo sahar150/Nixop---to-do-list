@@ -25,9 +25,7 @@ const todoList = reactive([
 ** 2- move completed task to the end
 */
 function toggleTaskState(task) {
-    let taskIndex = todoList.indexOf(task);
-    //affected the original array
-    todoList.splice(taskIndex, 1);
+    deletetask(task)
 
     if(task.done) {
         todoList.push(task)
@@ -36,13 +34,23 @@ function toggleTaskState(task) {
     }
 }
 
+/*
+** delete task permanently
+** affected the original array
+*/
+function deletetask(task) {
+    let taskIndex = todoList.indexOf(task);
+    todoList.splice(taskIndex, 1);
+}
+
 </script>
 
 <template>
     <section class="todo_list_conatiner">
         <h3 class="title">0/3 done</h3>
         <transition-group tag="ul" name="list">
-            <TodoItem v-for="item in todoList" :taskDetails="item" :key="item.id" @stateChanged="toggleTaskState(item)">
+            <TodoItem v-for="item in todoList" :taskDetails="item" :key="item.id" @stateChanged="toggleTaskState(item)"
+                @deleteTask="deletetask(item)">
             </TodoItem>
         </transition-group>
 
