@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 //import components
 import Header from './components/Header.vue';
+import TodoList from './components/TodoList.vue';
 
 const availabelThemes = ['violet', 'cabsav'];
 const currentTheme = ref(availabelThemes[0]);
@@ -18,6 +19,8 @@ function toggleTheme() {
 <template>
     <main class="main_container" :class="currentTheme + '_theme'">
         <Header :currentTheme="currentTheme" @toggleTheme="toggleTheme"></Header>
+
+        <TodoList></TodoList>
     </main>
 </template>
 
