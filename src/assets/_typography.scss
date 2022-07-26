@@ -45,3 +45,16 @@
     line-height: 15rem;
     color: $secondary_text_color;
 }
+
+//theme-based class colors
+.violet_theme {
+    .hint_text.theme_based {
+        color: $violet_approx;
+    }
+}
+
+.cabsav_theme {
+    .hint_text.theme_based {
+        color: $cab_sav;
+    }
+}

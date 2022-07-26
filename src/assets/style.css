@@ -56,11 +56,17 @@
   line-height: 19rem;
   color: #FFFFFF; }
 
-.hint_text {
+.hint_text, .form_group input::placeholder {
   font-weight: normal;
   font-size: 12rem;
   line-height: 15rem;
   color: #FFFFFFB3; }
+
+.violet_theme .hint_text.theme_based, .violet_theme .form_group input::placeholder, .form_group .violet_theme input::placeholder {
+  color: #2C0945; }
+
+.cabsav_theme .hint_text.theme_based, .cabsav_theme .form_group input::placeholder, .form_group .cabsav_theme input::placeholder {
+  color: #450920; }
 
 html {
   /* 62.5% of 16px browser font size is 10px
@@ -87,5 +93,8 @@ body {
   height: 100%;
   justify-content: center;
   align-items: center; }
+
+.form_group input::placeholder {
+  opacity: 0.3; }
 
 /*# sourceMappingURL=style.css.map */
