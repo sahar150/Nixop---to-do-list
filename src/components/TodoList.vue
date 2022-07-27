@@ -28,7 +28,7 @@ function toggleTaskState(task) {
     if(task.done) {
         todoList.value.push(task)
     } else {
-        todoList.unshift.value(task)
+        todoList.value.unshift(task)
     }
 }
 
