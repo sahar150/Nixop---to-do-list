@@ -18,19 +18,31 @@ function toggleTheme() {
 </script>
 
 <template>
-    <main class="main_container" :class="currentTheme + '_theme'">
-        <Header :currentTheme="currentTheme" @toggleTheme="toggleTheme"></Header>
+    <section class="app_layout" :class="currentTheme + '_theme'">
+        <main class="main_container">
+            <Header :currentTheme="currentTheme" @toggleTheme="toggleTheme"></Header>
 
-        <TodoList></TodoList>
-    </main>
+            <TodoList></TodoList>
+        </main>
 
-    <Footer></Footer>
+        <Footer></Footer>
+    </section>
 </template>
 
 <style scoped lang="scss">
 
 @import './assets/variables';
 @import './assets/mixins';
+
+.app_layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    padding-block: 45rem;
+    justify-content: center;
+    align-items: center;
+
     .main_container {
         position: relative;
         display: flex;
@@ -44,32 +56,24 @@ function toggleTheme() {
         padding: 28rem;
         margin-bottom: 45rem;
 
-        //outer container gradiant background without adding extra unnecessary html tag
-        &::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-        }
+    }
 
-        &.violet_theme {
-            &::before {
-                @include outer_container_bg($light_lilac, $sunff_approx);
-            }
+    //layout theming
+    &.violet_theme {
+        @include outer_container_bg($light_lilac, $sunff_approx);
 
+        .main_container {
             @include inner_container_style($light_orchid, $violet_blue, $venice);
         }
 
-        &.cabsav_theme {
-            &::before {
-                @include outer_container_bg($amourapprox, $prim);
-            }
+    }
 
+    &.cabsav_theme {
+        @include outer_container_bg($amourapprox, $prim);
+        .main_container {
             @include inner_container_style($careys_pink, $light_tapestry, $dark_tapestry);
         }
 
     }
+}
 </style>
