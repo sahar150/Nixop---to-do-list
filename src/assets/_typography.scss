@@ -51,10 +51,18 @@
     .hint_text.theme_based {
         color: $violet_approx;
     }
+
+    footer.hint_text {
+        color: $east_side;
+    }
 }
 
 .cabsav_theme {
     .hint_text.theme_based {
         color: $cab_sav;
+    }
+
+    footer.hint_text {
+        color: $puce;
     }
 }

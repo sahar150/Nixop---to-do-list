@@ -4,6 +4,7 @@ import { ref } from 'vue'
 //import components
 import Header from './components/Header.vue';
 import TodoList from './components/TodoList.vue';
+import Footer from './components/Footer.vue';
 
 const availabelThemes = ['violet', 'cabsav'];
 const currentTheme = ref(availabelThemes[0]);
@@ -22,6 +23,8 @@ function toggleTheme() {
 
         <TodoList></TodoList>
     </main>
+
+    <Footer></Footer>
 </template>
 
 <style scoped lang="scss">
@@ -30,11 +33,16 @@ function toggleTheme() {
 @import './assets/mixins';
     .main_container {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 95%;
         max-width: 456px;
         min-height: 70vh;
+        flex-shrink: 0;
         border-radius: $container_border_radius;
         padding: 28rem;
+        margin-bottom: 45rem;
 
         //outer container gradiant background without adding extra unnecessary html tag
         &::before {
