@@ -27,7 +27,7 @@ const props = defineProps({
 
 <style scoped lang="scss">
 
-@import '../assets/variables';
+@import '../assets/partials/variables';
 
 .task_container {
     display: flex;

@@ -32,7 +32,7 @@ function validate() {
 
 <style scoped lang="scss">
 
-@import '../assets/variables';
+@import '../assets/partials/variables';
 
 form {
     margin-top: 32rem;

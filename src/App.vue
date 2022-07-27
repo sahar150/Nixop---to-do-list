@@ -39,8 +39,8 @@ watchEffect(() => {
 
 <style scoped lang="scss">
 
-@import './assets/variables';
-@import './assets/mixins';
+@import './assets/partials/variables';
+@import './assets/partials/mixins';
 
 .app_layout {
     display: flex;

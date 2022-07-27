@@ -24,8 +24,8 @@ const appInfo = {
 </template>
 
 <style scoped lang="scss">
-@import '../assets/variables';
-@import '../assets/mixins';
+@import '../assets/partials/variables';
+@import '../assets/partials/mixins';
 
 .app_header {
     display: flex;
