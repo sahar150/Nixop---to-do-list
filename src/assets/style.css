@@ -84,6 +84,10 @@
 input[type="text"]:focus {
   border: 2px solid #FFFFFF; }
 
+button:active, input {
+  border-width: 1px;
+  transform: scale(0.99); }
+
 html {
   /* 62.5% of 16px browser font size is 10px
   ** 0.0625 * 16px=1 (i.e., 1rem=1px)

@@ -14,3 +14,9 @@
 input[type= "text"]:focus {
     border: 2px solid $primary_text_color;
 }
+
+//buttons press effect for all devices
+button:active , input {
+    border-width: 1px; //It will not affect if there is no border
+    transform: scale(0.99);
+}
