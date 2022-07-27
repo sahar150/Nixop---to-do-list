@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 
 //import components
 import Header from './components/Header.vue';
@@ -8,12 +8,20 @@ import Footer from './components/Footer.vue';
 
 const availabelThemes = ['violet', 'cabsav'];
 const currentTheme = ref(availabelThemes[0]);
+const theme_name_key = 'localThemeName'
+
+currentTheme.value = localStorage.getItem(theme_name_key) ?? availabelThemes[0]
 
 //toggle them function
 function toggleTheme() {
     //TODO: refactore  to handle more than two themes
     currentTheme.value = currentTheme.value === availabelThemes[0] ? availabelThemes[1] : availabelThemes[0]
 }
+
+//watch theme name
+watchEffect(() => {
+    localStorage.setItem(theme_name_key, currentTheme.value)
+})
 
 </script>
 
@@ -38,7 +46,7 @@ function toggleTheme() {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     padding-block: 45rem;
     justify-content: center;
     align-items: center;
