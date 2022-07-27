@@ -52,6 +52,13 @@ const props = defineProps({
             -webkit-box-orient: vertical;
         }
 
+        //show truncated text on hover
+        &:hover {
+            .task_title {
+                display: inline-block;
+            }
+        }
+
         //custom checkbox style
         input[type="checkbox"] {
             -webkit-appearance: none;
