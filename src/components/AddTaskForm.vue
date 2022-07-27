@@ -48,6 +48,7 @@ form {
         input {
             height: 48rem;
             padding-inline: 16rem;
+            width: 100%;
             flex: 1;
         }
 

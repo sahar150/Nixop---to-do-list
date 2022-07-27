@@ -75,11 +75,6 @@ const props = defineProps({
             }
         }
     }
-
-    .icon_btn {
-        cursor: pointer;
-    }
-
 }
 
 </style>

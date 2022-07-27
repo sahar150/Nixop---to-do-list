@@ -12,6 +12,11 @@ html {
     ** 0.0625 * 16px=1 (i.e., 1rem=1px)
     */
     font-size: 6.25%;
+
+    //according to inner container max width, so no need to handel other screen sizes
+    @media(max-width: 456px) {
+        font-size: 5.25%;
+    }
 }
 
 * {
@@ -25,18 +30,20 @@ button, input[type="text"], ul, li{
     all: unset;
 }
 
+button {
+    cursor: pointer;
+}
+
 body {
     font-family: $font_family;
     font-size: 16rem;
     height: 100vh;
 }
 
-.form_group {
-    input {
-        &::placeholder {
-            @extend .hint_text;
-            @extend .theme_based;
-            opacity: 0.3;
-        }
+input {
+    &::placeholder {
+        @extend .hint_text;
+        @extend .theme_based;
+        opacity: 0.3;
     }
 }

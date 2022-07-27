@@ -17,7 +17,7 @@ const appInfo = {
             <img src="../assets/images/logo.png" alt="logo" class="high_quality_logo">
             {{ appInfo.title }}
         </h1>
-        <button type="button" title="toggle theme" class="toggle_theme_btn" :class="currentTheme + '_theme'"
+        <button type="button" aria-label="toggle theme" class="toggle_theme_btn" :class="currentTheme + '_theme'"
             @click="$emit('toggleTheme')"></button>
         <h2 class="subtitle">{{ appInfo.description }}</h2>
     </header>
@@ -41,7 +41,6 @@ const appInfo = {
         height: 34rem;
         border-radius: 50%;
         border: 2px solid $primary_text_color;
-        cursor: pointer;
 
         &.violet_theme {
             @include gradient_btn($light_orchid, $violet_blue);

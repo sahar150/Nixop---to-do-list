@@ -22,7 +22,10 @@
    animations can be calculated correctly. */
 .list-leave-active {
   position: absolute;
-  width: calc(100% - 56rem); }
+  width: 100%; }
+
+.app_layout, .main_container, button, input, ul, li {
+  transition: all 0.5s ease; }
 
 .main_heading {
   font-weight: 600;
@@ -56,18 +59,18 @@
   line-height: 19rem;
   color: #FFFFFF; }
 
-.hint_text, .form_group input::placeholder {
+.hint_text, input::placeholder {
   font-weight: normal;
   font-size: 12rem;
   line-height: 15rem;
   color: #FFFFFFB3; }
 
-.violet_theme .hint_text.theme_based, .violet_theme .form_group input::placeholder, .form_group .violet_theme input::placeholder {
+.violet_theme .hint_text.theme_based, .violet_theme input::placeholder {
   color: #2C0945; }
 .violet_theme footer.hint_text {
   color: #A582C6; }
 
-.cabsav_theme .hint_text.theme_based, .cabsav_theme .form_group input::placeholder, .form_group .cabsav_theme input::placeholder {
+.cabsav_theme .hint_text.theme_based, .cabsav_theme input::placeholder {
   color: #450920; }
 .cabsav_theme footer.hint_text {
   color: #C6829C; }
@@ -77,6 +80,9 @@ html {
   ** 0.0625 * 16px=1 (i.e., 1rem=1px)
   */
   font-size: 6.25%; }
+  @media (max-width: 456px) {
+    html {
+      font-size: 5.25%; } }
 
 * {
   box-sizing: border-box;
@@ -86,12 +92,15 @@ html {
 button, input[type="text"], ul, li {
   all: unset; }
 
+button {
+  cursor: pointer; }
+
 body {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 16rem;
   height: 100vh; }
 
-.form_group input::placeholder {
+input::placeholder {
   opacity: 0.3; }
 
 /*# sourceMappingURL=style.css.map */

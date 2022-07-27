@@ -27,5 +27,10 @@
    animations can be calculated correctly. */
 .list-leave-active {
     position: absolute;
-    width: calc(100% - 56rem); //56 rem = padding + delete button width
+    width: 100%;
+}
+
+//add a transition to some elements to smoothing the hover effect or content changes
+.app_layout, .main_container, button, input, ul, li {
+    transition: all 0.5s ease;
 }
