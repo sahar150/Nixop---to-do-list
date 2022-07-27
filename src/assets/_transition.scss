@@ -31,6 +31,6 @@
 }
 
 //add a transition to some elements to smoothing the hover effect or content changes
-.app_layout, .main_container, button, input, ul, li {
+.app_layout, .main_container, button, input, ul, li, label {
     transition: all 0.5s ease;
 }

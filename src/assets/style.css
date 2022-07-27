@@ -24,7 +24,7 @@
   position: absolute;
   width: 100%; }
 
-.app_layout, .main_container, button, input, ul, li {
+.app_layout, .main_container, button, input, ul, li, label {
   transition: all 0.5s ease; }
 
 .main_heading {
@@ -74,6 +74,15 @@
   color: #450920; }
 .cabsav_theme footer.hint_text {
   color: #C6829C; }
+
+@media (hover: hover) {
+  button:hover {
+    transform: scale(1.1); }
+
+  .task_container .to_do_item:hover {
+    background-color: rgba(236, 216, 250, 0.5); } }
+input[type="text"]:focus {
+  border: 2px solid #FFFFFF; }
 
 html {
   /* 62.5% of 16px browser font size is 10px

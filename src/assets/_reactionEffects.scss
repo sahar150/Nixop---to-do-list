@@ -1,0 +1,16 @@
+// only for devices that support hover
+@media(hover: hover) {
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .task_container .to_do_item:hover {
+        //same color for both themes
+        background-color: rgba($selago, 0.5);
+    }
+}
+
+//input focus effect for all devices
+input[type= "text"]:focus {
+    border: 2px solid $primary_text_color;
+}
